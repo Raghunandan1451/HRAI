@@ -1,0 +1,133 @@
+.container {
+	position: relative;
+	width: calc(100vw - 20px);
+	height: calc(100vh - 20vh);
+	border-radius: 0.5rem;
+
+	margin: 0 auto;
+	background-color: #273d49cc;
+}
+
+.funcBtns {
+	position: relative;
+
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem;
+}
+
+.add {
+	margin: 0 0.5rem;
+	padding: 0.4rem;
+	color: #97a1a9;
+	border: 1px solid #14aff1;
+	border-radius: 0.5rem;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.edit,
+.delete {
+	margin: 0 0.5rem;
+	padding: 0.4rem;
+	color: #97a1a9;
+	border: 1px solid #97a1a9;
+	border-radius: 0.5rem;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+span img {
+	width: 0.8rem;
+}
+.delete span img {
+	margin: 0.3rem;
+}
+
+.search {
+	margin: 0 0.5rem;
+	background-color: #283a46;
+	color: #97a1a9;
+
+	border: 0;
+	outline: 0;
+
+	border-radius: 0.4rem;
+	width: 15rem;
+	padding: 0 0.5rem;
+	font-size: 0.9rem;
+}
+
+.searchIcon {
+	position: absolute;
+	right: 2rem;
+	top: 1.5rem;
+}
+
+.searchIcon img {
+	width: 1rem;
+}
+
+.table {
+	width: calc(100% - 4rem);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.table_header {
+	color: #97a1a9;
+	display: flex;
+	justify-content: space-around;
+	text-align: right;
+}
+
+.checkbox {
+	margin: 0 0.4rem;
+	filter: invert(0.2);
+}
+
+.custName,
+.cust_name_cont,
+.custId,
+.cust_id_cont,
+.invId,
+.inv_id_cont {
+	flex: 2;
+	text-align: left;
+}
+
+.invAmt,
+.inv_amt_cont,
+.dueDate,
+.due_date_cont {
+	flex: 2;
+	text-align: right;
+}
+
+.predDate,
+.pred_date_cont {
+	flex: 3;
+	text-align: right;
+	margin: 0 5rem;
+}
+
+.notesList,
+.notes_cont {
+	flex: 3;
+	text-align: left;
+}
+
+.table_content {
+	color: #ffffff;
+	display: flex;
+	justify-content: space-around;
+	text-align: right;
+	padding: 0.5rem 0;
+	border-radius: 0.2rem;
+	margin: 0.5rem 0;
+}
+
+tr:nth-child(2n) {
+	background-color: #283a46;
+}

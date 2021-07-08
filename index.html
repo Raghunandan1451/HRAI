@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HighRadius</title>
+	<link rel="stylesheet" href="./css/style.css">
+
+	<script defer src="./javascript/table.js"></script>
+	<script defer src="./javascript/buttonToggle.js"></script>
+
+</head>
+<body>
+
+	<div class="header">	
+		<div class="left_header">
+			<div class="companyLogo">
+				<img src="./images/Group 20399.svg" alt="highRdiusSymbol">
+			</div>
+			<div class="product">ABC Products</div>
+		</div>
+		<div class="center_header">
+			<img src="./images/logo.svg" alt="highRdiusLogo">
+		</div>
+		<div class="invoice">Invoice List</div>
+	</div>
+
+	<div class="container">
+		<div class="funcBtns">
+			<div class="add">
+				<span>
+					<img src="./images/Path 18189.svg" alt="plus">
+				</span>
+				Add
+			</div>
+			<div class="edit">
+				<span>
+					<img src="./images/Path 18191.svg" alt="pen">
+				</span>
+				Edit
+			</div>
+			<div class="delete">
+				<span>
+					<img src="./images/Path 18189-1.svg" alt="minus">
+				</span>
+				Delete
+			</div>
+			<input class="search" type="search" name="invoice" id="search" placeholder="Search by Invoice Number">
+			<span class="searchIcon">
+				<img src="./images/Symbol 129 – 1.svg" alt="magni">
+			</span>
+		</div>
+
+			
+		<div id="prevPage">
+			<div class="arrowLeft"></div>
+		</div>
+		<div id="nextPage">
+			<div class="arrowRight"></div>
+		</div>
+	
+
+		<table class="table">
+			<thead>
+				<tr class="table_header">
+					<td class="checkbox">
+						<input type="checkbox" name="mark" id="mark">
+					</td>
+					<td class="custName">
+						Customer Name
+					</td>
+					<td class="custId">
+						Customer #
+					</td>
+					<td class="invId">
+						Invoice #
+					</td>
+					<td class="invAmt">
+						Invoice Amount
+					</td>
+					<td class="dueDate">
+						Due Date
+					</td>
+					<td class="predDate">
+						Predicted Payment Date
+					</td>
+					<td class="notesList">
+						Notes
+					</td>
+				</tr>
+			</thead>
+
+			<tbody></tbody>
+
+		</table>
+	</div>
+
+	<!-- Modal for Add button -->
+	<div class="modalAdd">
+		<div class="modalHeader">
+			<div class="header_left">Add Invoice</div>
+			<div class="cross">
+				<img src="./images/baseline-close-24px.svg" alt="cross">
+			</div>
+		</div>
+
+		<div class="modalBody">
+			<div class="data">
+
+				<div class="modalCustName">
+					<label for="modalCustName">
+						Customer Name <span>*</span>
+					</label>
+					<input type="text" name="modalCustName" id="modalCustName">
+				</div>
+				
+				<div class="modalCustId">
+					<label for="modalCustId">
+						Customer No. <span>*</span>
+					</label>
+					<input type="text" name="modalCustId" id="modalCustId">
+				</div>
+				
+				<div class="modalInvId">
+					<label for="modalInvId">
+						Invoice No. <span>*</span>
+					</label>
+					<input type="text" name="modalInvId" id="modalInvId">
+				</div>
+				
+				<div class="modalInvAmt">
+					<label for="modalInvAmt">
+						Invoice Amount <span>*</span>
+					</label>
+					<input type="text" name="modalInvAmt" id="modalInvAmt">
+				</div>
+			</div>
+			<div class="datenote">
+				
+				<div class="modalDueDate">
+					<label for="modalDueDate">
+						Due Date <span>*</span>
+					</label>
+					<input type="text" name="modalDueDate" id="modalDueDate">
+				</div>
+				
+				<div class="modalNoteList">
+					<label for="modalNoteList">
+						Notes
+					</label>
+					<textarea name="modalNoteList" id="modalNoteList" cols="31" rows="8"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="modalFooter">
+			<div class="btnContainer">
+				<div class="btnLeft">
+					<button>Cancel</button>
+				</div>
+				<div class="btnRight">
+					<div class="btnClear">Clear</div>
+					<div class="btnAdd">Add</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Edit Button -->
+	<div class="modalEdit">
+		<div class="modalHeader">
+			<div class="header_left">Edit Invoice</div>
+			<div class="crosse">
+				<img src="./images/baseline-close-24px.svg" alt="cross">
+			</div>
+		</div>
+
+		<div class="modalBody">
+
+			<div class="editAmount">
+				<label for="editAmount">Invoice Amount</label>
+				<input type="text" name="editAmount" id="editAmount">
+			</div>
+			
+			<div class="editNote">
+				<label for="editNoteList">
+					Notes
+				</label>
+				<textarea name="editNoteList" id="editNoteList" cols="21" rows="8"></textarea>
+			</div>
+		</div>
+
+		<div class="modalFooter">
+			<div class="btnEditContainer">
+				<div class="btnLeft">
+					<button>Cancel</button>
+				</div>
+				<div class="btnRight">
+					<div class="btnClear">Reset</div>
+					<div class="btnEdit">Save</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Delete Button -->
+	<div class="modalDelete">
+		<div class="modalHeader">
+			<div class="header_left">Delete Record(s)?</div>
+			<div class="crossd">
+				<img src="./images/baseline-close-24px.svg" alt="cross">
+			</div>
+		</div>
+
+		<div class="modalBody">
+			
+			<div class="deleteMsg">
+				<p>You will lose your record(s) after this action. We can't recover them once you delete.</p>
+				<br>
+				<p>Are you sure you want to <span>permanently delete</span> them?</p>
+			</div>
+		</div>
+
+		<div class="modalFooter">
+			<div class="btnDeleteContainer">
+				<div class="btnRight">
+					<div class="btnCancel">Cancel</div>
+					<div class="btnDelete">Delete</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	
+
+
+</body>
+</html>

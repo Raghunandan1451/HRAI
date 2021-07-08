@@ -1,0 +1,143 @@
+.modalAdd {
+	display: none;
+	position: absolute;
+	top: 25vh;
+	left: 20vw;
+
+	background-color: #39495e;
+	width: 50rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1.1rem #00000029;
+}
+
+.modalHeader {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 0.05rem solid #283a46;
+	margin: 0.8rem 0;
+}
+
+.header_left {
+	color: #ffffff;
+	font-size: 1.5rem;
+	margin: 0.8rem;
+}
+
+.cross {
+	position: absolute;
+	right: 1.5rem;
+	top: 1.5rem;
+}
+
+.header_right img {
+	width: 1rem;
+}
+
+.modalBody {
+	display: flex;
+	justify-content: space-around;
+	color: #97a1a9;
+	padding: 1rem 0;
+	margin: 1rem 0;
+	border-bottom: 0.05rem solid #283a46;
+}
+
+.data,
+.datenote {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.modalCustName,
+.modalCustId,
+.modalInvId,
+.modalInvAmt,
+.modalDueDate {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+	width: 100%;
+}
+
+.modalBody label {
+	text-align: left;
+}
+.modalBody span {
+	color: #ff5b5b;
+}
+
+.data input,
+.datenote input {
+	width: 15rem;
+	height: 2rem;
+	background-color: #283a46;
+	border: 0.1rem solid #356680;
+	border-radius: 0.5rem;
+	color: #ffffff;
+	margin: 0 1rem;
+	outline: #356680;
+}
+
+.modalNoteList {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: flex-start;
+	margin: 0.5rem 0;
+	text-align: left;
+}
+
+.modalNoteList textarea {
+	background-color: #283a46;
+	resize: none;
+	border-radius: 0.5rem;
+	border: 0.1rem solid #356680;
+	margin: 0 1rem;
+	outline: #356680;
+}
+
+.modalFooter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.btnContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+}
+
+.btnLeft button {
+	color: #14aff1;
+	padding: 0.5rem 1rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+.btnRight {
+	display: flex;
+	align-items: center;
+}
+
+.btnClear {
+	margin: 0 0.8rem;
+	padding: 0.4rem 1rem;
+	border: 0.1rem solid #14aff1;
+	color: #ffffff;
+	background-color: transparent;
+	border-radius: 0.5rem;
+}
+
+.btnAdd {
+	padding: 0.5rem 1rem;
+	color: #ffffff;
+	background-color: #97a1a9;
+	border-radius: 0.5rem;
+}

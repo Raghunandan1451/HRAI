@@ -1,0 +1,74 @@
+.modalEdit {
+	display: none;
+	position: absolute;
+	top: 25vh;
+	left: 40vw;
+
+	background-color: #39495e;
+	border-radius: 0.3rem;
+}
+
+.crosse {
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+}
+
+.modalEdit .modalBody {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.editAmount {
+	margin: 0.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.editNote {
+	margin: 0.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.editAmount input {
+	padding: 0.3rem;
+	background-color: #283a46;
+	border: 0.1rem solid #356680;
+	border-radius: 0.5rem;
+	color: #ffffff;
+	margin: 0 1rem;
+	outline: #356680;
+}
+.editNote textarea {
+	padding: 0 0.5rem;
+	margin: 0 1rem;
+
+	background-color: #283a46;
+	resize: none;
+	color: #ffffff;
+
+	border-radius: 0.5rem;
+	border: 0.1rem solid #356680;
+	outline: #356680;
+}
+
+.btnEditContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.btnEdit {
+	padding: 0.5rem 1rem;
+	color: #ffffff;
+	background-color: #14aff1;
+	border-radius: 0.5rem;
+}
