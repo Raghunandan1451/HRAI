@@ -36,6 +36,11 @@
 	background-color: transparent;
 	cursor: pointer;
 }
+.add, .edit, .delete {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
 span img {
 	width: 0.8rem;

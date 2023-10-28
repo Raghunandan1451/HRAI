@@ -83,28 +83,6 @@ let tempCont = [
 			'Test Text',
 		],
 	},
-	{
-		json_cont: [
-			'cust_name',
-			'cust_id',
-			'inv_id',
-			'inv_amt',
-			'due_date',
-			'--',
-			'Test Text',
-		],
-	},
-	{
-		json_cont: [
-			'cust_name',
-			'cust_id',
-			'inv_id',
-			'inv_amt',
-			'due_date',
-			'--',
-			'Test Text',
-		],
-	},
 ];
 
 const template = `<tr class="table_content">
@@ -175,6 +153,10 @@ const change_page = (page) => {
 		page === num_pages() ? '#00000069' : '#14AFF1';
 };
 
-for (let i = 0; i < 10; i++) {
+tempCont.forEach((key, value) => {
+	console.log(key, value);
 	table_body.innerHTML += template;
-}
+});
+// for (let i = 0; i < tempCont; i++) {
+// 	table_body.innerHTML += template;
+// }
