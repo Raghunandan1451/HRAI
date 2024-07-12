@@ -1,0 +1,124 @@
+{
+  "invoices": [
+    {
+      "id": "1",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "2",
+      "customerName": "Customer B",
+      "customerNumber": "67890",
+      "invoiceNumber": "INV-002",
+      "invoiceAmount": 2000,
+      "dueDate": "2024-07-05",
+      "predictedPaymentDate": "2024-07-15",
+      "notes": "Delayed payment"
+    },
+    {
+      "id": "3",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "5",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "6",
+      "customerName": "Customer BCD",
+      "customerNumber": "67891",
+      "invoiceNumber": "INV-002",
+      "invoiceAmount": 2000,
+      "dueDate": "2024-07-05",
+      "predictedPaymentDate": "2024-07-15",
+      "notes": "Delayed payment"
+    },
+    {
+      "id": "7",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "8",
+      "customerName": "Customer B",
+      "customerNumber": "67890",
+      "invoiceNumber": "INV-002",
+      "invoiceAmount": 2000,
+      "dueDate": "2024-07-05",
+      "predictedPaymentDate": "2024-07-15",
+      "notes": "Delayed payment"
+    },
+    {
+      "id": "9",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "10",
+      "customerName": "Customer B",
+      "customerNumber": "67890",
+      "invoiceNumber": "INV-002",
+      "invoiceAmount": 2000,
+      "dueDate": "2024-07-05",
+      "predictedPaymentDate": "2024-07-15",
+      "notes": "Delayed payment"
+    },
+    {
+      "id": "11",
+      "customerName": "Customer A",
+      "customerNumber": "12345",
+      "invoiceNumber": "INV-001",
+      "invoiceAmount": 1000,
+      "dueDate": "2024-07-01",
+      "predictedPaymentDate": "2024-07-10",
+      "notes": "Paid on time"
+    },
+    {
+      "id": "12",
+      "customerName": "Customer B",
+      "customerNumber": "67890",
+      "invoiceNumber": "INV-002",
+      "invoiceAmount": 2000,
+      "dueDate": "2024-07-05",
+      "predictedPaymentDate": "2024-07-15",
+      "notes": "Delayed payment"
+    },
+    {
+      "id": "8588",
+      "customerName": "Test 2",
+      "customerNumber": "45125",
+      "invoiceNumber": "INV-1",
+      "invoiceAmount": 51321,
+      "dueDate": "",
+      "predictedPaymentDate": "",
+      "notes": ""
+    }
+  ]
+}
