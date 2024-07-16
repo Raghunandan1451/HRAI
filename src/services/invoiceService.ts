@@ -6,7 +6,6 @@ const API_URL = 'http://localhost:3001/invoices'
 
 export const fetchInvoices = async (): Promise<Invoice[]> => {
   const response = await axios.get(`${API_URL}`);
-  console.table(response.data)
   return response.data;
 };
 

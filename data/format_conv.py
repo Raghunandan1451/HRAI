@@ -24,7 +24,16 @@ def xlsx_to_json(xlsx_file):
             else:
                 formated_row[headers[idx]] = cell_value
 
-        json_data["invoices"].append(formated_row)
+        json_data["invoices"].append({
+            "id": formated_row.get('doc_id', '--'),
+            "customerName": formated_row.get('name_customer', '--'),
+            "customerNumber": formated_row.get('cust_number', '--'),
+            "invoiceNumber": formated_row.get('doc_id', '--'),
+            "invoiceAmount": formated_row.get('converted_usd', '--'),
+            "dueDate": formated_row.get('due_in_date', '--'),
+            "predictedPaymentDate": formated_row.get('clear_date', '--'),
+            "notes": '--',
+        })
 
     return json_data
 
