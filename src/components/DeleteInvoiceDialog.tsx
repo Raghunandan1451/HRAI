@@ -7,28 +7,14 @@ interface DeleteInvoiceDialogProps {
   open: boolean;
   onClose: () => void;
   onDelete: () => void;
-  invoiceId: number | null;
+  invoiceId: number[] | null;
 }
 
 const DeleteInvoiceDialog: React.FC<DeleteInvoiceDialogProps> = ({ open, onClose, onDelete, invoiceId }) => {
-  const handleDelete = async () => {
-    if (invoiceId !== null) {
-      await deleteInvoice(invoiceId);
-      onDelete();
-      onClose();
-    }
-  };
 
   return (
     <Dialog open={open} onClose={onClose}>
-      <DialogTitle>Delete Invoice</DialogTitle>
-      <DialogContent>
-        <Typography>Are you sure you want to delete this invoice?</Typography>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={onClose}>Cancel</Button>
-        <Button onClick={handleDelete} color="secondary">Delete</Button>
-      </DialogActions>
+      Delete
     </Dialog>
   );
 };

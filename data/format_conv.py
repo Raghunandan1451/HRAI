@@ -28,7 +28,7 @@ def xlsx_to_json(xlsx_file):
             "id": formated_row.get('doc_id', '--'),
             "customerName": formated_row.get('name_customer', '--'),
             "customerNumber": formated_row.get('cust_number', '--'),
-            "invoiceNumber": formated_row.get('doc_id', '--'),
+            "invoiceNumber": str(formated_row.get('doc_id', '--')),
             "invoiceAmount": formated_row.get('converted_usd', '--'),
             "dueDate": formated_row.get('due_in_date', '--'),
             "predictedPaymentDate": formated_row.get('clear_date', '--'),
