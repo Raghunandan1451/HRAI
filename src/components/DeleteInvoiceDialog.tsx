@@ -1,20 +1,52 @@
-// src/components/DeleteInvoiceDialog.tsx
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from '@mui/material';
-import { deleteInvoice } from '../services/invoiceService';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface DeleteInvoiceDialogProps {
   open: boolean;
   onClose: () => void;
-  onDelete: () => void;
-  invoiceId: number[] | null;
+  onDelete: (invoiceIds: string[]) => void;  // Expecting array of strings as IDs
+  invoiceIds: string[] | null;
 }
 
-const DeleteInvoiceDialog: React.FC<DeleteInvoiceDialogProps> = ({ open, onClose, onDelete, invoiceId }) => {
+const DeleteInvoiceDialog: React.FC<DeleteInvoiceDialogProps> = ({ open, onClose, onDelete, invoiceIds }) => {
+
+  const handleDelete = () => {
+    console.log(invoiceIds);
+    if (invoiceIds && invoiceIds.length > 0) {
+      console.log(invoiceIds);
+      onDelete(invoiceIds);
+      onClose();
+    }
+  };
 
   return (
     <Dialog open={open} onClose={onClose}>
-      Delete
+      <DialogTitle sx={{ backgroundColor: '#2c3e50', color: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        Delete Record(s)?
+        <IconButton onClick={onClose} sx={{ color: '#fff' }}>
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent sx={{ backgroundColor: '#34495e', color: '#fff', height: 'fit-content' }}>
+        <p>
+          You will lose your record(s) after this action. We can't recover them once you delete.
+        </p>
+        <p>
+          Are you sure you want to <span style={{ color: '#FF5E5E' }}>permanently delete</span> them?
+        </p>
+      </DialogContent>
+      <DialogActions sx={{ backgroundColor: '#2c3e50' }}>
+        <Button onClick={onClose} sx={{ color: '#3498db', marginRight: 'auto' }}>
+          Cancel
+        </Button>
+        <Button
+          onClick={handleDelete}
+          sx={{ color: '#3498db' }}
+        >
+          Delete
+        </Button>
+      </DialogActions>
     </Dialog>
   );
 };

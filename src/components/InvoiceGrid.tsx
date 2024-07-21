@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import AddInvoiceDialog from './AddInvoiceDialog';
 import EditInvoiceDialog from './EditInvoiceDialog';
 import DeleteInvoiceDialog from './DeleteInvoiceDialog';
-import { fetchInvoices } from '../services/invoiceService';
+import { addInvoice, deleteInvoice, fetchInvoices, updateInvoice } from '../services/invoiceService';
 import { Invoice } from '../types/Invoice';
 import InvoiceActions from './InvoiceActions'
 import InvoiceTable from './InvoiceTable';
@@ -13,6 +13,7 @@ const InvoiceGrid: React.FC = () => {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [selectedInvoice, setSelectedInvoice] = useState<Invoice[]>([]);
   const [selectedInvoiceId, setSelectedInvoiceId] = useState<number[]>([]);
+  const [originalInvoices, setOriginalInvoices] = useState<Invoice[]>([]);
 
   const [openAddDialog, setOpenAddDialog] = useState(false);
   const [openEditDialog, setOpenEditDialog] = useState(false);
@@ -23,17 +24,22 @@ const InvoiceGrid: React.FC = () => {
   useEffect(() => {
     fetchInvoices().then(data => {
       setInvoices(data);
+      setOriginalInvoices(data);
     });
   }, []);
 
   // Update filtered invoices based on search query
   useEffect(() => {
-    setInvoices(
-      invoices.filter(invoice =>
-        invoice.invoiceNumber.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
-  }, [searchQuery, invoices]);
+    if (searchQuery === '') {
+      setInvoices(originalInvoices)
+    } else {
+      setInvoices(
+        originalInvoices.filter(invoice =>
+          invoice.invoiceNumber.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+      );
+    }
+  }, [searchQuery, originalInvoices]);
 
   const handleAddDialogClose = () => {
     setOpenAddDialog(false);
@@ -63,24 +69,37 @@ const InvoiceGrid: React.FC = () => {
     }
   };
 
-  const handleAdd = () => {
-    fetchInvoices().then(data => {
-      setInvoices(data);
-    });
+  const handleAdd = (invoice: Invoice) => {
+    addInvoice(invoice)
+      .then(() => {
+        fetchInvoices().then(data => {
+          setInvoices(data);
+        });
+      });
+    setOpenAddDialog(false);
   };
 
-  const handleUpdate = () => {
-    fetchInvoices().then(data => {
-      setInvoices(data);
-    });
+  const handleUpdate = (invoiceId: number,invoice: Invoice) => {
+    updateInvoice(invoiceId, invoice)
+      .then(() => {
+        fetchInvoices().then(data => {
+          setInvoices(data);
+        });
+      });
+    setOpenEditDialog(false);
   };
 
-  const handleDelete = () => {
-    fetchInvoices().then(data => {
-      setInvoices(data);
-    });
+  const handleDelete = (invoiceId: number[]) => {
+    deleteInvoice(invoiceId)
+      .then(() => {
+        fetchInvoices().then(data => {
+          setInvoices(data);
+        });
+      });
+    setOpenDeleteDialog(false)
   };
 
+  console.log(selectedInvoiceId)
   return (
     <div style={{ height: '100%', width: '95%' }}>
       <InvoiceActions
@@ -93,8 +112,8 @@ const InvoiceGrid: React.FC = () => {
         selectedInvoiceId={selectedInvoiceId}
       />
       <AddInvoiceDialog open={openAddDialog} onClose={handleAddDialogClose} onAdd={handleAdd} />
-      <EditInvoiceDialog open={openEditDialog} onClose={handleEditDialogClose} onUpdate={handleUpdate} invoice={selectedInvoice} />
-      <DeleteInvoiceDialog open={openDeleteDialog} onClose={handleDeleteDialogClose} onDelete={handleDelete} invoiceId={selectedInvoiceId} />
+      {selectedInvoice ? <EditInvoiceDialog open={openEditDialog} onClose={handleEditDialogClose} onUpdate={handleUpdate} invoice={selectedInvoice} /> : null}
+      {selectedInvoiceId ? <DeleteInvoiceDialog open={openDeleteDialog} onClose={handleDeleteDialogClose} onDelete={handleDelete} invoiceId={selectedInvoiceId} /> : null}
 
       <InvoiceTable 
         invoices={invoices}

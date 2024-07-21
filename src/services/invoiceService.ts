@@ -17,6 +17,8 @@ export const updateInvoice = async (id: number, invoice: Invoice): Promise<void>
   await axios.put(`${API_URL}/${id}`, invoice);
 };
 
-export const deleteInvoice = async (id: number): Promise<void> => {
-  await axios.delete(`${API_URL}/${id}`);
+export const deleteInvoice = async (ids: number[]): Promise<void> => {
+
+  // Send the array of invoice objects to the API
+  await axios.delete(`${API_URL}/'${ids}`);
 };

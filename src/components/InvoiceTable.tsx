@@ -69,11 +69,11 @@ const InvoiceTable: React.FC<InvoiceTableProps> = ({
             </TableHead>
             <TableBody>
               {invoices.slice(page * rowsPerPage, (page + 1) * rowsPerPage).map((invoice, index) => (
-                <TableRow key={index} sx={{ backgroundColor: index % 2 === 0 ? '#283A46' : 'inherit' }}>
+                <TableRow key={index} sx={{ backgroundColor: index % 2 === 1 ? '#283A46' : 'inherit' }}>
                   <TableCell>
                     <Checkbox
-                      checked={selectedInvoiceId ? selectedInvoiceId.includes(index) : false}
-                      onChange={() => handleSelectInvoice(invoice, index)}
+                      checked={selectedInvoiceId ? selectedInvoiceId.includes(invoice.id || invoice[0].id) : false}
+                      onChange={() => handleSelectInvoice(invoice, invoice.id || invoice[0].id)}
                     />
                   </TableCell>
                   <TableCell sx={{color: "#fff"}}>{invoice.customerName}</TableCell>

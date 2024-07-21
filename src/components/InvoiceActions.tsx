@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Button, TextField, Grid } from '@mui/material';
 import { InvoiceActionsProps } from '../types/Invoice';
 import AddIcon from '@mui/icons-material/Add';
@@ -14,11 +14,17 @@ const InvoiceActions: React.FC<InvoiceActionsProps> = ({
   onDelete,
   selectedInvoiceId,
 }) => {
+
   const isSingleSelected = selectedInvoiceId && selectedInvoiceId.length === 1;
   const isAnySelected = selectedInvoiceId && selectedInvoiceId.length > 0;
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+  };
+
   return (
-    <Grid container spacing={2} justifyContent="flex-end" alignItems="center" margin="10px" width="calc(100% - 16px)">
+    <Grid container spacing={2} justifyContent="flex-end" alignItems="center" margin="10px" width="calc(100% - 16px)" padding="0 3rem">
       <Grid item>
         <Button variant="contained" color="primary" onClick={onAdd} startIcon={<AddIcon />}>
           Add
@@ -51,7 +57,7 @@ const InvoiceActions: React.FC<InvoiceActionsProps> = ({
           placeholder="Search by Invoice Number"
           variant="outlined"
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
           InputProps={{
             endAdornment: <SearchIcon />,
             style: { fontSize: 15, height: 40, padding: '0 14px' }
