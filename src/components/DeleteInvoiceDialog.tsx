@@ -6,15 +6,13 @@ interface DeleteInvoiceDialogProps {
   open: boolean;
   onClose: () => void;
   onDelete: (invoiceIds: string[]) => void;  // Expecting array of strings as IDs
-  invoiceIds: string[] | null;
+  invoiceIds: number[] | null;
 }
 
 const DeleteInvoiceDialog: React.FC<DeleteInvoiceDialogProps> = ({ open, onClose, onDelete, invoiceIds }) => {
 
   const handleDelete = () => {
-    console.log(invoiceIds);
     if (invoiceIds && invoiceIds.length > 0) {
-      console.log(invoiceIds);
       onDelete(invoiceIds);
       onClose();
     }

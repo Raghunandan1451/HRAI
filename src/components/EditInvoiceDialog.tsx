@@ -12,6 +12,11 @@ interface EditInvoiceDialogProps {
 
 const EditInvoiceDialog: React.FC<EditInvoiceDialogProps> = ({ open, onClose, onUpdate, invoice }) => {
   const [invoiceData, setInvoiceData] = useState<Invoice>({
+    customerName: '',
+    customerNumber: '',
+    invoiceNumber: '',
+    dueDate: '',
+    predictedPaymentDate: '--',
     invoiceAmount: 0,
     notes: ''
   });

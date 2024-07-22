@@ -79,7 +79,7 @@ const InvoiceGrid: React.FC = () => {
     setOpenAddDialog(false);
   };
 
-  const handleUpdate = (invoiceId: number,invoice: Invoice) => {
+  const handleUpdate = (invoiceId: number, invoice: Invoice) => {
     updateInvoice(invoiceId, invoice)
       .then(() => {
         fetchInvoices().then(data => {
@@ -97,9 +97,9 @@ const InvoiceGrid: React.FC = () => {
         });
       });
     setOpenDeleteDialog(false)
+    setSelectedInvoiceId([])
   };
 
-  console.log(selectedInvoiceId)
   return (
     <div style={{ height: '100%', width: '95%' }}>
       <InvoiceActions
@@ -113,7 +113,7 @@ const InvoiceGrid: React.FC = () => {
       />
       <AddInvoiceDialog open={openAddDialog} onClose={handleAddDialogClose} onAdd={handleAdd} />
       {selectedInvoice ? <EditInvoiceDialog open={openEditDialog} onClose={handleEditDialogClose} onUpdate={handleUpdate} invoice={selectedInvoice} /> : null}
-      {selectedInvoiceId ? <DeleteInvoiceDialog open={openDeleteDialog} onClose={handleDeleteDialogClose} onDelete={handleDelete} invoiceId={selectedInvoiceId} /> : null}
+      {selectedInvoiceId ? <DeleteInvoiceDialog open={openDeleteDialog} onClose={handleDeleteDialogClose} onDelete={handleDelete} invoiceIds={selectedInvoiceId} /> : null}
 
       <InvoiceTable 
         invoices={invoices}

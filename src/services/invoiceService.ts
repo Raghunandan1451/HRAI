@@ -18,7 +18,6 @@ export const updateInvoice = async (id: number, invoice: Invoice): Promise<void>
 };
 
 export const deleteInvoice = async (ids: number[]): Promise<void> => {
-
-  // Send the array of invoice objects to the API
-  await axios.delete(`${API_URL}/'${ids}`);
+  const deleteRequests = ids.map(id => axios.delete(`${API_URL}/${id}`));
+  await Promise.all(deleteRequests);
 };

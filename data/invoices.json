@@ -1,26 +1,6 @@
 {
   "invoices": [
     {
-      "id": "124210",
-      "customerName": "Test",
-      "customerNumber": "123695",
-      "invoiceNumber": "159632",
-      "invoiceAmount": 1452.2,
-      "dueDate": "2024-07-21",
-      "predictedPaymentDate": "--",
-      "notes": "This is updation testing"
-    },
-    {
-      "id": "645425",
-      "customerName": "Test 2",
-      "customerNumber": "112233",
-      "invoiceNumber": "445566",
-      "invoiceAmount": "351",
-      "dueDate": "2024-07-20",
-      "predictedPaymentDate": "--",
-      "notes": "Destined to be deleted, Testing Update"
-    },
-    {
       "id": "1930815172",
       "customerName": "WAL-MAR in",
       "customerNumber": "0200769623",
